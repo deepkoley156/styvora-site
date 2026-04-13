@@ -1,132 +1,952 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Styvora | Women’s Fashion & Accessories</title>
-<meta name="description" content="Discover trending women’s fashion, jewelry, and accessories. Shop curated styles from Styvora.">
+  <title>Styvora | Women's Fashion & Accessories</title>
+  <meta name="description" content="Discover elegant women's fashion, jewelry, and accessories. Explore curated styles from Styvora with a modern, timeless aesthetic." />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:#fff;
-  color:#111;
-}
+    :root{
+      --bg:#fffdf9;
+      --white:#ffffff;
+      --text:#111111;
+      --muted:#666666;
+      --soft:#8a8a8a;
+      --line:#ece7df;
+      --accent:#b8915f;
+      --accent-dark:#9f7b4d;
+      --card:#faf7f2;
+      --shadow:0 12px 35px rgba(0,0,0,0.08);
+      --radius:18px;
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:60px;
-}
+    body{
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(to bottom, #fffdf9, #fffaf4);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-.logo{
-  font-size:22px;
-  font-weight:600;
-  letter-spacing:1px;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-nav a{
-  text-decoration:none;
-  margin-left:20px;
-  color:#555;
-  font-size:14px;
-}
+    img{
+      display:block;
+      max-width:100%;
+    }
 
-.hero{
-  text-align:center;
-  margin-bottom:80px;
-}
+    .container{
+      width:min(1180px, 92%);
+      margin:auto;
+    }
 
-.hero h1{
-  font-size:40px;
-  font-weight:500;
-  margin-bottom:20px;
-}
+    /* Header */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(12px);
+      background:rgba(255,253,249,0.85);
+      border-bottom:1px solid rgba(236,231,223,0.8);
+    }
 
-.hero p{
-  color:#666;
-  font-size:16px;
-}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-.card{
-  text-decoration:none;
-  color:#111;
-}
+    .logo-badge{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:linear-gradient(135deg, #d7b27d, #a97c45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+      box-shadow:0 8px 20px rgba(185,145,95,0.25);
+    }
 
-.card img{
-  width:100%;
-  border-radius:8px;
-  margin-bottom:10px;
-}
+    .logo-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
 
-.card h3{
-  font-size:16px;
-  font-weight:500;
-}
+    .logo-text span:first-child{
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:0.5px;
+    }
 
-footer{
-  text-align:center;
-  margin-top:80px;
-  font-size:13px;
-  color:#777;
-}
-</style>
+    .logo-text span:last-child{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    nav a{
+      font-size:14px;
+      color:#444;
+      transition:0.3s ease;
+    }
+
+    nav a:hover{
+      color:var(--accent);
+    }
+
+    .nav-btn{
+      padding:12px 18px;
+      background:var(--text);
+      color:#fff;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:500;
+      transition:0.3s ease;
+    }
+
+    .nav-btn:hover{
+      background:var(--accent);
+      transform:translateY(-1px);
+    }
+
+    /* Hero */
+    .hero{
+      padding:90px 0 70px;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero-text .tag{
+      display:inline-block;
+      padding:8px 14px;
+      background:#f4ede3;
+      color:var(--accent-dark);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:clamp(38px, 6vw, 68px);
+      line-height:1.05;
+      font-weight:700;
+      letter-spacing:-1.8px;
+      margin-bottom:22px;
+    }
+
+    .hero p{
+      max-width:560px;
+      font-size:17px;
+      color:var(--muted);
+      margin-bottom:30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      padding:14px 24px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:600;
+      transition:0.3s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:var(--text);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary:hover{
+      background:var(--accent);
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+    }
+
+    .btn-secondary:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+      transform:translateY(-2px);
+    }
+
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      color:var(--soft);
+      font-size:14px;
+    }
+
+    .hero-points span{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .hero-points span::before{
+      content:"●";
+      color:var(--accent);
+      font-size:10px;
+    }
+
+    .hero-visual{
+      position:relative;
+    }
+
+    .hero-card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card img{
+      width:100%;
+      height:540px;
+      object-fit:cover;
+      border-radius:22px;
+    }
+
+    .floating-badge{
+      position:absolute;
+      bottom:24px;
+      left:-20px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:18px;
+      padding:14px 16px;
+      min-width:180px;
+    }
+
+    .floating-badge small{
+      color:var(--muted);
+      display:block;
+      margin-bottom:4px;
+      font-size:12px;
+    }
+
+    .floating-badge strong{
+      font-size:15px;
+    }
+
+    /* Section Common */
+    .section{
+      padding:34px 0 20px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:26px;
+    }
+
+    .section-head h2{
+      font-size:32px;
+      line-height:1.1;
+      letter-spacing:-0.8px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:520px;
+      font-size:15px;
+    }
+
+    /* Categories */
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+      margin-top:10px;
+    }
+
+    .category-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      min-height:320px;
+      box-shadow:var(--shadow);
+      background:#eee;
+    }
+
+    .category-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.5s ease;
+    }
+
+    .category-card:hover img{
+      transform:scale(1.06);
+    }
+
+    .category-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+      display:flex;
+      align-items:flex-end;
+      padding:24px;
+    }
+
+    .category-overlay h3{
+      color:#fff;
+      font-size:22px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+
+    .category-overlay p{
+      color:rgba(255,255,255,0.85);
+      font-size:14px;
+    }
+
+    /* Features */
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .feature-box{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      transition:0.3s ease;
+    }
+
+    .feature-box:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+
+    .feature-box h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .feature-box p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Products */
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:24px;
+      margin-top:10px;
+    }
+
+    .product-card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      transition:0.35s ease;
+      box-shadow:0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .product-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
+
+    .product-image{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .product-image img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      transition:transform 0.45s ease;
+    }
+
+    .product-card:hover .product-image img{
+      transform:scale(1.05);
+    }
+
+    .product-tag{
+      position:absolute;
+      top:14px;
+      left:14px;
+      background:rgba(255,255,255,0.95);
+      color:var(--text);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .product-info{
+      padding:18px 18px 20px;
+    }
+
+    .product-info h3{
+      font-size:17px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .product-info p{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .product-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--accent-dark);
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* About */
+    .about-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+      margin-top:14px;
+    }
+
+    .about-image{
+      background:#f0ebe3;
+      border-radius:28px;
+      overflow:hidden;
+      min-height:460px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .about-content{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-content .mini{
+      font-size:13px;
+      color:var(--accent-dark);
+      font-weight:700;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .about-content h2{
+      font-size:34px;
+      line-height:1.15;
+      margin-bottom:16px;
+    }
+
+    .about-content p{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:18px;
+    }
+
+    .about-list{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .about-list div{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      font-size:14px;
+      color:#444;
+    }
+
+    .about-list div::before{
+      content:"✓";
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    /* Newsletter */
+    .newsletter{
+      margin-top:70px;
+      background:linear-gradient(135deg, #111111, #2c241b);
+      color:#fff;
+      border-radius:30px;
+      padding:42px 28px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+      box-shadow:var(--shadow);
+    }
+
+    .newsletter h3{
+      font-size:30px;
+      line-height:1.15;
+      margin-bottom:10px;
+    }
+
+    .newsletter p{
+      color:rgba(255,255,255,0.78);
+      font-size:15px;
+      max-width:520px;
+    }
+
+    .newsletter-form{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .newsletter-form input{
+      min-width:260px;
+      padding:14px 18px;
+      border:none;
+      outline:none;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    .newsletter-form button{
+      padding:14px 22px;
+      border:none;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s ease;
+    }
+
+    .newsletter-form button:hover{
+      background:#c49b67;
+      transform:translateY(-2px);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:70px;
+      padding:28px 0 40px;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-brand strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .footer-brand p{
+      color:var(--muted);
+      font-size:14px;
+      max-width:420px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-size:14px;
+      color:#555;
+    }
+
+    .footer-links a:hover{
+      color:var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero,
+      .about-wrap,
+      .newsletter{
+        grid-template-columns:1fr;
+      }
+
+      .category-grid,
+      .feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card img{
+        height:420px;
+      }
+
+      .floating-badge{
+        left:14px;
+      }
+
+      .newsletter-form{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width: 768px){
+      header{
+        flex-direction:column;
+        gap:16px;
+        align-items:flex-start;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        gap:14px;
+      }
+
+      .hero{
+        padding:60px 0 40px;
+      }
+
+      .hero h1{
+        letter-spacing:-1px;
+      }
+
+      .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .about-content{
+        padding:28px 22px;
+      }
+
+      .newsletter{
+        padding:30px 20px;
+      }
+
+      .newsletter h3{
+        font-size:24px;
+      }
+
+      .newsletter-form input{
+        min-width:100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="topbar">
+    <div class="container">
+      <header>
+        <div class="logo-wrap">
+          <div class="logo-badge">S</div>
+          <div class="logo-text">
+            <span>Styvora</span>
+            <span>Women's Fashion & Accessories</span>
+          </div>
+        </div>
 
-<header>
-<div class="logo">Styvora</div>
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-</nav>
-</header>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#featured">Featured</a>
+          <a href="#about">About</a>
+          <a href="#" class="nav-btn">Shop Now</a>
+        </nav>
+      </header>
+    </div>
+  </div>
 
-<section class="hero">
-<h1>Minimal. Elegant. Timeless.</h1>
-<p>Curated fashion & jewelry for modern women</p>
-</section>
+  <main>
+    <div class="container">
 
-<section class="grid">
+      <section class="hero">
+        <div class="hero-text">
+          <span class="tag">Curated for modern women</span>
+          <h1>Minimal style with a touch of timeless elegance.</h1>
+          <p>
+            Explore beautifully curated jewelry, accessories, and fashion essentials designed
+            to elevate everyday style with grace, charm, and confidence.
+          </p>
 
-<a href="product-1.html" class="card">
-<img src="images/product-1.jpg">
-<h3>Elegant Nose Ring</h3>
-</a>
+          <div class="hero-actions">
+            <a href="#featured" class="btn-primary">Explore Collection</a>
+            <a href="#about" class="btn-secondary">About Styvora</a>
+          </div>
 
-<a href="product-2.html" class="card">
-<img src="images/product-2.jpg">
-<h3>Gold Plated Hoop</h3>
-</a>
+          <div class="hero-points">
+            <span>Elegant designs</span>
+            <span>Curated collections</span>
+            <span>Modern feminine style</span>
+          </div>
+        </div>
 
-</section>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="images/hero.jpg" alt="Styvora featured fashion collection">
+          </div>
+          <div class="floating-badge">
+            <small>Signature Aesthetic</small>
+            <strong>Elegant, refined & feminine</strong>
+          </div>
+        </div>
+      </section>
 
-<footer>
-© Styvora — Women’s Fashion & Accessories
-</footer>
+      <section class="section" id="categories">
+        <div class="section-head">
+          <div>
+            <h2>Shop by Category</h2>
+          </div>
+          <p>
+            Discover handpicked pieces across jewelry, accessories, and fashion staples
+            designed for graceful everyday styling.
+          </p>
+        </div>
 
-</div>
+        <div class="category-grid">
+          <a href="#" class="category-card">
+            <img src="images/category-jewelry.jpg" alt="Jewelry collection">
+            <div class="category-overlay">
+              <div>
+                <h3>Jewelry</h3>
+                <p>Elegant nose pins, hoops, rings & statement pieces</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="category-card">
+            <img src="images/category-fashion.jpg" alt="Women fashion collection">
+            <div class="category-overlay">
+              <div>
+                <h3>Fashion</h3>
+                <p>Curated modern looks for everyday and festive style</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="category-card">
+            <img src="images/category-accessories.jpg" alt="Women accessories collection">
+            <div class="category-overlay">
+              <div>
+                <h3>Accessories</h3>
+                <p>Timeless finishing touches for a complete look</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="feature-grid">
+          <div class="feature-box">
+            <h3>Curated with Taste</h3>
+            <p>Every piece is selected to reflect elegance, simplicity, and modern femininity.</p>
+          </div>
+          <div class="feature-box">
+            <h3>Premium Visual Style</h3>
+            <p>A clean brand experience that feels stylish, luxurious, and easy to explore.</p>
+          </div>
+          <div class="feature-box">
+            <h3>Timeless Appeal</h3>
+            <p>From daily wear to statement moments, discover pieces that stay beautiful beyond trends.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="featured">
+        <div class="section-head">
+          <div>
+            <h2>Featured Picks</h2>
+          </div>
+          <p>
+            A selection of elegant favorites from the Styvora collection, crafted to inspire
+            effortless style and confidence.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <a href="product-1.html" class="product-card">
+            <div class="product-image">
+              <img src="images/product-1.jpg" alt="Elegant Nose Ring">
+              <span class="product-tag">Best Seller</span>
+            </div>
+            <div class="product-info">
+              <h3>Elegant Nose Ring</h3>
+              <p>A refined design with a graceful finish for timeless everyday charm.</p>
+              <span class="product-link">View Product →</span>
+            </div>
+          </a>
+
+          <a href="product-2.html" class="product-card">
+            <div class="product-image">
+              <img src="images/product-2.jpg" alt="Gold Plated Hoop">
+              <span class="product-tag">Trending</span>
+            </div>
+            <div class="product-info">
+              <h3>Gold Plated Hoop</h3>
+              <p>Classic shine and modern elegance combined in a versatile statement piece.</p>
+              <span class="product-link">View Product →</span>
+            </div>
+          </a>
+
+          <a href="product-3.html" class="product-card">
+            <div class="product-image">
+              <img src="images/product-3.jpg" alt="Minimal Pendant Set">
+              <span class="product-tag">New Arrival</span>
+            </div>
+            <div class="product-info">
+              <h3>Minimal Pendant Set</h3>
+              <p>Subtle sophistication for women who love understated style.</p>
+              <span class="product-link">View Product →</span>
+            </div>
+          </a>
+
+          <a href="product-4.html" class="product-card">
+            <div class="product-image">
+              <img src="images/product-4.jpg" alt="Classic Ethnic Earrings">
+              <span class="product-tag">Editor's Pick</span>
+            </div>
+            <div class="product-info">
+              <h3>Classic Ethnic Earrings</h3>
+              <p>Traditional beauty reimagined with a polished, modern touch.</p>
+              <span class="product-link">View Product →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="about-wrap">
+          <div class="about-image">
+            <img src="images/about.jpg" alt="About Styvora fashion brand">
+          </div>
+
+          <div class="about-content">
+            <div class="mini">About Styvora</div>
+            <h2>Where modern fashion meets graceful femininity.</h2>
+            <p>
+              Styvora is a curated destination for women's fashion, jewelry, and accessories.
+              Our aesthetic is rooted in elegance, minimalism, and timeless beauty.
+            </p>
+            <p>
+              We believe style should feel effortless yet memorable. That is why every collection
+              is designed to help women express confidence through refined details.
+            </p>
+
+            <div class="about-list">
+              <div>Carefully selected designs with a premium visual identity</div>
+              <div>Balanced blend of trendy and timeless pieces</div>
+              <div>Perfect for everyday wear, festive looks, and gifting inspiration</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <h3>Get the latest from Styvora</h3>
+          <p>
+            Join our style circle for elegant picks, fashion inspiration, and new arrivals
+            curated for modern women.
+          </p>
+        </div>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <footer>
+        <div class="footer-wrap">
+          <div class="footer-brand">
+            <strong>Styvora</strong>
+            <p>Elegant women's fashion, jewelry, and accessories with a modern timeless aesthetic.</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#featured">Featured</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
 
 </body>
 </html>
